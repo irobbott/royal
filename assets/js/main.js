@@ -23,3 +23,31 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// Animate background images on hero section
+document.addEventListener("DOMContentLoaded", () => {
+    const bgImage = document.querySelector('.bg-image');
+
+    if (!bgImage) return; // Exit if bg-image is not on this page
+
+    const images = [
+        "./assets/images/hero-img-1.jpg",
+        "./assets/images/hero-img-2.jpg",
+        "./assets/images/hero-img-3.jpg"
+    ];
+    let currentIndex = 0;
+
+    setInterval(() => {
+        currentIndex = (currentIndex + 1) % images.length;
+
+        bgImage.classList.add('flash');
+
+        setTimeout(() => {
+            bgImage.style.backgroundImage = `url('${images[currentIndex]}')`;
+        }, 150);
+
+        setTimeout(() => {
+            bgImage.classList.remove('flash');
+        }, 300);
+    }, 5000);
+});
