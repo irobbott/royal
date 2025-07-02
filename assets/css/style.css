@@ -215,6 +215,15 @@ li {
     list-style: none;
 }
 
+section {
+    width: 100%;
+    padding: 100px 0;
+}
+.inner-section {
+    width: 80%;
+    margin: 0 auto;
+}
+
 /* Nav */
 nav {
     width: 100%;
@@ -430,4 +439,44 @@ header {
     margin: 0 auto 150px auto;
     z-index: 300;
     text-align: center;
+}
+
+/* Website stats */
+.stats {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card-1 {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    background: var(--color-primary-light);
+    border-radius: 10px;
+}
+
+.card-2 {
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 250px;
+    height: 240px;
+    background: var(--color-primary-dark);
+    border-radius: 10px;
+    transition: var(--primary-transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card-1:hover .card-2 {
+    top: 20px;
+    height: 230px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transition: var(--primary-transition);
 }
