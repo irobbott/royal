@@ -8,6 +8,19 @@
     }
 }
 
+@media (max-width: 900px) {
+    .core {
+        flex-direction: column;
+    }
+    .left-core {
+        width: 100%;
+    }
+    .right-core {
+        width: 100%;
+        min-height: 300px;
+    }
+}
+
 @media (max-width: 700px) {
     .nav-links {
         display: none;
@@ -17,17 +30,43 @@
     }
 }
 
+@media (max-width: 540px) {
+    .core-blocks {
+        height: 100%;
+    }
+}
+
 @media (max-width: 800px) {
     .hero-header h1 {
         font-size: 2.5em;
     }
+    .mission-block {
+        flex-direction: column;
+    }
+    .left-img {
+        width: 100%;
+        min-height: 300px;
+    }
+
+    .right-block {
+        width: 100%;
+    }
 }
 
 @media (max-width: 500px) {
+    .inner-section {
+        width: 90%;
+    }
     .navbar {
         width: 100%;
     }
     nav {
         padding: 0 10px;
+    }
+    .m-head {
+        font-size: 5em;
+    }
+    .right-block {
+        padding: 40px 20px;
     }
 }

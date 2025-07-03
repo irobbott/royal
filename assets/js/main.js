@@ -1,3 +1,18 @@
+// Shrink navbar on scroll
+document.addEventListener('DOMContentLoaded', function () {
+    const nav = document.querySelector('nav');
+
+    if (nav) {
+        window.addEventListener('scroll', function () {
+            if (window.scrollY >= 520) {
+                nav.classList.add('shrink');
+            } else {
+                nav.classList.remove('shrink');
+            }
+        });
+    }
+});
+
 // Mobile nav toggle
 document.addEventListener('DOMContentLoaded', () => {
     const navToggle = document.getElementById('mobile-nav-toggle');
@@ -50,4 +65,42 @@ document.addEventListener("DOMContentLoaded", () => {
             bgImage.classList.remove('flash');
         }, 300);
     }, 5000);
+});
+
+// Core services image change
+document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('.core-blocks .abg-2');
+    const rightCore = document.querySelector('.right-core');
+
+    // Only proceed if both elements exist
+    if (links.length > 0 && rightCore) {
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                rightCore.style.background = "url('./assets/images/img-02.jpg') no-repeat center center / cover";
+            });
+
+            link.addEventListener('mouseleave', () => {
+                rightCore.style.background = ''; // Reset or set to original if needed
+            });
+        });
+    }
+});
+
+// Core services image change
+document.addEventListener('DOMContentLoaded', function () {
+    const links = document.querySelectorAll('.core-blocks .abg-3');
+    const rightCore = document.querySelector('.right-core');
+
+    // Only proceed if both elements exist
+    if (links.length > 0 && rightCore) {
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                rightCore.style.background = "url('./assets/images/img-03.jpg') no-repeat center center / cover";
+            });
+
+            link.addEventListener('mouseleave', () => {
+                rightCore.style.background = ''; // Reset or set to original if needed
+            });
+        });
+    }
 });
