@@ -216,7 +216,7 @@ li {
 
 section {
     width: 100%;
-    padding: 100px 0;
+    padding: 60px 0;
 }
 .inner-section {
     width: 80%;
@@ -682,4 +682,73 @@ header {
     gap: 10px;
     flex-wrap: wrap;
     margin-top: 20px;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    background: var(--color-primary-dark);
+    position: relative;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+    padding: 40px;
+}
+
+footer li {
+    margin: 20px 0;
+}
+
+footer .col-md-3 {
+    border-bottom: 1px solid var(--color-secondary-light);
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+}
+
+.base-footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px 20px 40px;
+}
+
+/* iRobbott */
+.r-tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    color: #3498db;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.r-tooltip:hover {
+    color: #1abc9c;
+}
+
+.r-tooltip .r-tooltiptext {
+    visibility: hidden;
+    width: 230px;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 10px 12px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Position above the link */
+    left: 0;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 14px;
+}
+
+.r-tooltip:hover .r-tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }

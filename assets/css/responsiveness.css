@@ -53,6 +53,17 @@
     }
 }
 
+@media (max-width: 600px) {
+    .base-footer {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    footer .mbbb {
+        margin-bottom: 80px;
+    }
+}
+
 @media (max-width: 500px) {
     .inner-section {
         width: 90%;
