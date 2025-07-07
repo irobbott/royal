@@ -1,0 +1,18 @@
+RewriteEngine On
+
+# Get current directory (subdirectory-safe redirect)
+RewriteCond %{THE_REQUEST} /index\.(html|php) [NC]
+RewriteCond %{REQUEST_URI} ^(.*/)?index\.(html|php)$ [NC]
+RewriteRule ^index\.(html|php)$ %1 [R=301,L]
+
+# Redirect .html or .php to clean URLs (e.g. /about.html → /about)
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.(html|php)[\s?] [NC]
+RewriteRule ^(.+)\.(html|php)$ /%1 [R=301,L]
+
+# Internally rewrite clean URLs to .html
+RewriteCond %{REQUEST_FILENAME}.html -f
+RewriteRule ^([^/]+)/?$ $1.html [L]
+
+# Internally rewrite clean URLs to .php
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/]+)/?$ $1.php [L]

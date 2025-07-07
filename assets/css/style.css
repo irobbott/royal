@@ -366,12 +366,24 @@ header {
     width: 100%;
     height: 100vh;
     position: relative;
-    /* background: url('../images/hero-img-1.jpg')no-repeat top center/cover; */
     background-attachment: fixed;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+header.pages {
+    height: 50vh !important;
+    background: url('../images/hero-img-1.jpg')no-repeat center center/cover;
+}
+
+.page-link {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    font-size: 1.5em;
+    margin-bottom: 40px;
 }
 
 #home {
@@ -559,9 +571,28 @@ header {
     transition: var(--primary-transition);
 }
 
+.right-core-2 {
+    width: 40%;
+    background: url('../images/img-02.jpg')no-repeat center center/cover;
+    border-radius: 10px;
+    transition: var(--primary-transition);
+}
+
+.right-core-3 {
+    width: 40%;
+    background: url('../images/img-05.jpg')no-repeat center center/cover;
+    border-radius: 10px;
+    transition: var(--primary-transition);
+}
+
 .left-core {
     width: 60%;
     padding: 40px 20px 40px 0;
+}
+
+.left-core-2 {
+    width: 60%;
+    padding: 40px 0 40px 40px;
 }
 
 .core-head {
@@ -696,6 +727,15 @@ footer {
 
 footer li {
     margin: 20px 0;
+}
+
+.footer-links li a:hover i {
+    margin-left: 5px;
+    transition: var(--primary-transition);
+}
+
+.footer-links li a i {
+    transition: var(--primary-transition);
 }
 
 footer .col-md-3 {

@@ -19,6 +19,16 @@
         width: 100%;
         min-height: 300px;
     }
+    .left-core-2 {
+        width: 100%;
+    }
+    .right-core-2 {
+        width: 100%;
+        min-height: 300px;
+    }
+    .core-head {
+        font-size: 3em;
+    }
 }
 
 @media (max-width: 700px) {
