@@ -104,3 +104,27 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 });
+
+// Testimonials
+document.addEventListener('DOMContentLoaded', function () {
+    const sliderElement = document.querySelector('.testimonial-slider');
+    if (sliderElement) {
+        new Swiper('.testimonial-slider', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+            slidesPerView: 2,
+            },
+            992: {
+            slidesPerView: 3,
+            }
+        }
+        });
+    }
+});
