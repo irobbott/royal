@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+<?php require_once 'send.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <!-- Primary Meta Tags -->
-  <title>Services &vert; The Royal Family Corporation &mdash; Empowering Individuals with IDD in Chicagoland</title>
+  <title>Contact Us &vert; The Royal Family Corporation &mdash; Empowering Individuals with IDD in Chicagoland</title>
   <meta name="title" content="The Royal Family Corporation &mdash; Empowering Individuals with IDD in Chicagoland">
   <meta name="description" content="The Royal Family Corporation provides compassionate, inclusive, and luxurious support services for individuals with intellectual and developmental disabilities across Illinois.">
 
@@ -86,13 +88,13 @@
     </header>
 
     <section id="contact" class="container py-5">
-        <h2 class="section-title text-center">Contact Us</h2>
+        <h2 class="section-title text-center core-head">Contact Us</h2>
         <div class="row g-5" style="margin-bottom: 40px;">
             <!-- Contact Details -->
             <div class="col-md-6">
                 <div class="mb-4">
                     <h5><i class="fas fa-map-marker-alt me-2 text-warning"></i>Our Location</h5>
-                    <p>1234 Hope Street, Chicago, IL 60601</p>
+                    <p>1440 W Taylor St #2727 Chicago IL 60607, USA</p>
                     
                 </div>
                 <div class="mb-4">
@@ -113,29 +115,38 @@
             </div>
             <!-- Contact Form -->
             <div class="col-md-6">
-                <form>
+                <?php if (isset($_SESSION['form_status'])): ?>
+                    <?php list($type, $msg) = $_SESSION['form_status']; ?>
+                    <div class="alert alert-<?php echo $type === 'success' ? 'success' : 'danger'; ?>">
+                        <?php echo htmlspecialchars($msg); ?>
+                    </div>
+                    <?php unset($_SESSION['form_status']); ?>
+                <?php endif; ?>
+
+                <form method="POST" action="">
+                    <input type="hidden" name="form_token" value="<?php echo md5('secure123'); ?>">
+                    <div style="display:none;">
+                        <input type="text" name="website" value="">
+                    </div>
+
                     <div class="mb-3">
                         <label for="name" class="form-label">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Your full name" required>
+                        <input type="text" class="form-control" id="name" name="name" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="your@email.com" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="subject" class="form-label">Subject</label>
-                        <input type="text" class="form-control" id="subject" placeholder="Subject of your message" required>
+                        <input type="email" class="form-control" id="email" name="email" required>
                     </div>
                     <div class="mb-3">
                         <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" id="message" rows="5" placeholder="Write your message here..." required></textarea>
+                        <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
                     </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
+                    <button type="submit" name="submit" class="btn btn-primary">Send Message</button>
                 </form>
             </div>
         </div>
         <div class="ratio ratio-16x9 rounded overflow-hidden" style="height: 400px;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509529!2d-122.4194156846815!3d37.7749292797594!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c5d5031fd%3A0x98407e14f928e28b!2sThe%20Royal%20Family!5e0!3m2!1sen!2sus!4v1700000000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2971.0877824086374!2d-87.66590128841868!3d41.86945777112277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880e2c910dd28e9d%3A0x16469cf8a3561043!2s1440%20W%20Taylor%20St%20%232727%2C%20Chicago%2C%20IL%2060607%2C%20USA!5e0!3m2!1sen!2sng!4v1752838671222!5m2!1sen!2sng" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </section>
 
